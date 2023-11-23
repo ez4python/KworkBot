@@ -5,7 +5,9 @@ data = {
         "vacancy": "💼 Vacancies / Vacancy placement",
         "language": "🇺🇿/🇬🇧 Edit language",
         "welcome": "Welcome to Kwork Bot",
-        "choose_lang": "Choose language 👇"
+        "choose_lang": "Choose language 👇",
+        "fullname": "Ism-sharifingizni kiriting 📝",
+        "phone_number": ""
     },
     "UZB": {
         "freelancer": "👨💻 Men Frilanserman",
