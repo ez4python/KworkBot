@@ -5,7 +5,7 @@ from os import getenv
 
 load_dotenv()
 
+# pip install python-dotenv
 BOT_TOKEN = getenv("BOT_TOKEN")
-
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(storage=MemoryStorage())

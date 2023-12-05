@@ -6,8 +6,14 @@ data = {
         "language": "🇺🇿/🇬🇧 Edit language",
         "welcome": "Welcome to Kwork Bot",
         "choose_lang": "Choose language 👇",
-        "fullname": "Ism-sharifingizni kiriting 📝",
-        "phone_number": ""
+        "fullname": "Enter your fullname 📝",
+        "phone_number": "Send phone number 👇",
+        "phone_button": "Phone number ☎",
+        "specialty_text": "Who should do the task?👇",
+        "task_title": "Enter a title for the task ✍🏻",
+        "task_description": "Enter task description ✍🏻",
+        "task_price": "Set the price ✍🏻\nFor example: 50 000",
+        "confirm_task": "Wait for confirmation that your order has been sent to the admin"
     },
     "UZB": {
         "freelancer": "👨💻 Men Frilanserman",
@@ -16,7 +22,13 @@ data = {
         "language": "🇺🇿/🇬🇧 Tilni o'zgartirish",
         "welcome": "Kwork botiga xush kelibsiz",
         "choose_lang": "Tilni tanlang 👇",
-        "fullname": "Enter your fullname 📝",
-        "phone_number": ""
+        "fullname": "Ism-sharifingizni kiriting 📝",
+        "phone_number": "Telefon raqamingizni yuboring 👇",
+        "phone_button": "Telefon raqam ☎",
+        "specialty_text": "Vazifa kim tomonidan bajarilsin ?👇",
+        "task_title": "Topshiriqni sarlohasini kiriting ✍🏻",
+        "task_description": "Topshiriqni tafsifini kiriting ✍🏻",
+        "task_price": "Narxni belgilang ✍🏻\nMisol uchun: 50 000",
+        "confirm_task": "Sizning buyurtmangiz adminga yuborildi tastiqlanishini kuting"
     }
 }

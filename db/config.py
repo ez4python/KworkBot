@@ -1,30 +1,27 @@
+import datetime
+import os
 from os import getenv
 from dotenv import load_dotenv
+from sqlalchemy import DateTime, create_engine
+from sqlalchemy.orm import declarative_base, mapped_column, Session
 
 load_dotenv()
+Base = declarative_base()
 
-import psycopg2
+
+class Config:
+    DB_USER = os.getenv("DB_USER")
+    DB_PASSWORD = os.getenv("DB_PASSWORD")
+    DB_NAME = os.getenv("DB_NAME")
+    DB_HOST = os.getenv("DB_HOST")
+    DB_CONFIG = f"postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
 
 
-class DB:
-    config = {
-        "DB_NAME": getenv('DB_NAME'),
-        "DB_PORT": getenv('DB_PORT'),
-        "DB_HOST": getenv('DB_HOST'),
-        "DB_PASSWORD": getenv('DB_PASSWORD'),
-        "DB_USER": getenv('DB_USER')
-    }
-    con = psycopg2.connect(**config)
-    cur = con.cursor()
+engine = create_engine(Config().DB_CONFIG)
+session = Session(engine)
 
-    def insert(self):
-        pass
 
-    def select(self):
-        pass
-
-    def delete(self):
-        pass
-
-    def update(self):
-        pass
+class AbstractClass(Base):
+    __abstract__ = True
+    create_at = mapped_column(DateTime, default=datetime.datetime.utcnow)
+    updated_at = mapped_column(DateTime, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
