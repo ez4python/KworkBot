@@ -40,9 +40,15 @@ async def phone_number_handler(msg: Message, state: FSMContext):
     lang = state_data.get("lang")
     phone_number = msg.contact.phone_number
     state_data.update({"phone_number": phone_number})
+    user = {
+        "user_id": state_data.get("user_id"),
+        "fullname": state_data.get("fullname"),
+        "phone_number": phone_number,
+        "lang": state_data.get("lang")
+    }
     await state.set_data(state_data)
     await state.set_state(TaskState.category)
-    query = insert(Customer).values(**state_data)
+    query = insert(Customer).values(**user)
     session.execute(query)
     session.commit()
     await msg.answer(data[lang]["specialty_text"], reply_markup=categories_inline_btn())

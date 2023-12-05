@@ -7,6 +7,13 @@ class UserState(StatesGroup):
     phone_number = State()
 
 
+class FreelancerState(StatesGroup):
+    language = State()
+    fullname = State()
+    phone_number = State()
+    category = State()
+
+
 class TaskState(StatesGroup):
     category = State()
     title = State()

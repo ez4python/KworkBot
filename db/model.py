@@ -15,11 +15,24 @@ class Customer(AbstractClass):
     tasks: Mapped[list['Task']] = relationship(back_populates='customer')
 
 
+class Freelancer(AbstractClass):
+    __tablename__ = "freelancers"
+    id: Mapped[int] = mapped_column(BIGINT, autoincrement=True, primary_key=True)
+    user_id: Mapped[int] = mapped_column(BIGINT)
+    lang: Mapped[str] = mapped_column()
+    fullname: Mapped[str] = mapped_column()
+    phone_number: Mapped[str] = mapped_column()
+    category_id: Mapped[int] = mapped_column(ForeignKey("categories.id"))
+    role: Mapped[str] = mapped_column(default="FREELANCER")
+    category: Mapped['Category'] = relationship(back_populates="freelancers")
+
+
 class Category(AbstractClass):
     __tablename__ = "categories"
     id: Mapped[int] = mapped_column(BIGINT, autoincrement=True, primary_key=True)
     name: Mapped[str] = mapped_column()
     tasks: Mapped[list['Task']] = relationship(back_populates="category")
+    freelancers: Mapped[list['Freelancer']] = relationship(back_populates='category')
 
 
 #

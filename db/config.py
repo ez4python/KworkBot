@@ -1,6 +1,5 @@
 import datetime
 import os
-from os import getenv
 from dotenv import load_dotenv
 from sqlalchemy import DateTime, create_engine
 from sqlalchemy.orm import declarative_base, mapped_column, Session
